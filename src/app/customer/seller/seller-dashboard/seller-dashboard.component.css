@@ -1,0 +1,9 @@
+.progressbar-div .progress{
+    margin-top: .7rem;
+    height: 1.5rem;
+}
+
+.progressbar-div .progress .progress-bar{
+    color: black;
+    font-weight: bold;
+}

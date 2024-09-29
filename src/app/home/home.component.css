@@ -1,0 +1,11 @@
+.home {
+    text-align: center;
+}
+
+.home .intro {
+    padding-top: 5rem;
+}
+
+.home .short_desc {
+    padding-bottom: 2rem;
+}

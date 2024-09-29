@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="#">{{'header.ecommerce' | translate}}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/">{{'header.home' | translate}}
+                        <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- <li class="nav-item">
+                <a class="nav-link" href="#">{{'header.service' | translate}}</a>
+            </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#" aria-disabled="true">
+                        {{'header.about_us' | translate}}
+                    </a>
+                </li>
+
+                <li class="nav-item" *ngIf="user_role == 'buyer'">
+                    <a class="nav-link" routerLink="/my-order">{{'header.order' | translate}}</a>
+                </li>
+                <li class="nav-item" *ngIf="user_role == 'admin'">
+                    <a class="nav-link" routerLink="/all-order">{{'header.order' | translate}}</a>
+                </li>
+                <li class="nav-item" *ngIf="user_role == 'seller'">
+                    <a class="nav-link" routerLink="/seller/product">{{'header.product' | translate}}</a>
+                </li>
+                <li class="nav-item" *ngIf="user_role == 'admin'">
+                    <a class="nav-link" routerLink="/admin/product">{{'header.product' | translate}}</a>
+                </li>
+                <li class="nav-item" *ngIf="user_role == 'admin'">
+                    <a class="nav-link" routerLink="/admin/user">{{'header.user' | translate}}</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" routerLink="/contact-us">{{'header.contact_us' | translate}}</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto" *ngIf="!logged_in">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/sign-in">{{'header.signin' | translate}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/sign-up">{{'header.signup' | translate}}</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto" *ngIf="logged_in">
+                <li class="nav-item">
+                    <a class="nav-link sim-pointer" routerLink="/my-profile">{{'header.my_profile' | translate}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link sim-pointer" (click)="logOut()">{{'header.signout' | translate}}</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle sim-pointer" id="#navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown">
+                        {{language}}
+                    </a>
+                    <div class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" (click)="switchLanguage('en')">{{'header.lang_en' | translate}}</a>
+                        <a class="dropdown-item" (click)="switchLanguage('ar')">{{'header.lang_ar' | translate}}</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
